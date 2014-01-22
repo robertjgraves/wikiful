@@ -1,0 +1,17 @@
+<div>
+  <h1><%= @category.name %></h1>
+  <table>
+  <tr>
+    <th>Published on:</th>
+    <th>Title</th>
+  </tr>
+  </tr>
+  <% @category.articles.order(created_at: :desc).each do |article| %>
+    <tr>
+      <td><%= article.created_at.strftime('%b %d, %Y') %></td>
+      <td><%= link_to article.title, article %></td>
+    </tr>
+  <% end %>
+  </table>
+  <p><%= link_to 'Back to All Categories', categories_path %>
+</div>

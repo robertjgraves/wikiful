@@ -3,7 +3,7 @@
 <ul>
 <% @categories.each do |category| %>
   <div>
-  <li><%= category.name %></li>
+  <li><%= link_to category.name, category %></li>
   </div>
 <% end %>
 </ul>
