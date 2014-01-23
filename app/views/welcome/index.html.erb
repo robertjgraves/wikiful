@@ -1,4 +1,22 @@
 <h1>Welcome to Wikiful</h1>
-<p>This site is under construction. Check back soon!</p>
+<p>Here are some recent articles:</p>
+
+<% @recent_articles.each do |article| %>
+  <div>
+  <h3><%= article.title %></h3>
+    <p><%= article.created_at.strftime('%b %d, %Y') %></p>
+    <p><%= truncate(article.content, length: 97, separator: ' ') { link_to "read more", article } %></p>
+    <p>
+    <% if article.categories.count > 1 %>
+      Categories:
+      <% elsif %>
+      Category:
+    <% end %>
+
+    <% article.categories.each do |category| %>
+        <%= link_to category.name, category %>&nbsp;
+    <% end %>
+    </div>
+<% end %>
 
 
