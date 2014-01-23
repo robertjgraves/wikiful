@@ -1,8 +1,10 @@
 <div>
+  <div class="page-header">
   <h1><%= @category.name %></h1>
-  <table>
+  </div>
+  <table class="table table-striped">
   <tr>
-    <th>Published on:</th>
+    <th>Published:</th>
     <th>Title</th>
   </tr>
   </tr>
@@ -13,5 +15,5 @@
     </tr>
   <% end %>
   </table>
-  <p><%= link_to 'Back to All Categories', categories_path %>
+  <p><%= link_to 'Back to All Categories', categories_path, :class => "btn btn-default" %>
 </div>
