@@ -6,4 +6,5 @@ Wikiful::Application.routes.draw do
 
   resources :articles
   resources :categories
+  resources :users
 end
